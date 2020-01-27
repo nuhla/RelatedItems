@@ -81,25 +81,36 @@ class RelatedItems extends React.Component {
     };
   }
 
+  //-----------------------------------------------------------------------------//
+  //----- handel the click on one of the items of the related subject anchors ---//
+  //-----------------------------------------------------------------------------//
   handelClick(e) {
-    //----------------------------------------------------------------------------//
-    //----- taking the id of the item form the the link of the containing page ---//
-    //----------------------------------------------------------------------------//
+    //-----------------------------------------------------------------------------------------------------//
+    //----- redirect the top container of the component wich is the page to this item page and view it  ---//
+    //-----------------------------------------------------------------------------------------------------//
     var id = parseInt($(e.target).attr('id'));
     window.top.location.href =
       'https://google-play-replica.herokuapp.com/?itemid=' + id;
   }
+
+  //-----------------------------------------------------------------------------//
+  //----- handel the click on one of the items of the related subject anchors ---//
+  //-----------------------------------------------------------------------------//
   componentDidMount() {
     var itemId = 1;
     var windowurl = window.location.href;
+    //----------------------------------------------------------------------------------------------------//
+    //----- if the id exist then get the link of this item from the link by substring the link string ----//
+    //----------------------------------------------------------------------------------------------------//
     if (windowurl.indexOf('itemid') > 0) {
       itemId = windowurl.substring(
         windowurl.indexOf('itemid') + 'itemid'.length + 1,
         windowurl.length
       );
     }
-
-    /// ajax to get information from the basic info API
+    //------------------------------------------------------------------------//
+    //-------- ajax request to get information from the basic info API -------//
+    //------------------------------------------------------------------------//
     var allRats = [];
 
     var that = this;
