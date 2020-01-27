@@ -17,11 +17,6 @@ wich is Rates: https://protected-plains-93575.herokuapp.com/reviewsApi/getRate/ 
 # Problem
 How to creat a component to view all the needed information of other items relating to the Viewd Item .
 
-# How to Get Started
-- fork the repo.
-- clone it .
-- run command "npm i'
-- run command "npm run start"
 
 # Used Technology
 - Mern approach.
@@ -33,5 +28,9 @@ How to creat a component to view all the needed information of other items relat
 - Webpack. 
 
 
-
+# How to Get Started
+- fork the repo.
+- clone it .
+- run command "npm i'
+- run command "npm run start"
 
