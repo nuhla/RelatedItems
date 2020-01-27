@@ -23,5 +23,15 @@ How to creat a component to view all the needed information of other items relat
 - run command "npm i'
 - run command "npm run start"
 
+# Used Technology
+- Mern approach.
+- React , React DOM
+- Styled Component .
+- Prime Components.
+- react-star-ratings - stars Component to Show the Rating for each Component.
+- Ajax.
+- Webpack. 
+
+
 
 
