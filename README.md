@@ -8,16 +8,16 @@ but for simplicity we gathered 4 other items from our dataBase and Viewed the Ma
 #Green Field Project
 Our HIRs to make sure that we are doing our job and whoever wants to know our potentials.
 
-#Summary
+# Summary
 this component summarize the over all usage of API , we need to connect the Basic Information API to get the description ,
 Rates, name and Image for at least 4 items in the dataBase. from (https://basic-info-proxy.herokuapp.com/products). 
 and the for each item of those we need to get the Rating value for each one of them form another API,
 wich is Rates: https://protected-plains-93575.herokuapp.com/reviewsApi/getRate/ .Depending on the id of each item .
 
-#Problem
+# Problem
 How to creat a component to view all the needed information of other items relating to the Viewd Item .
 
-#How to Get Started
+# How to Get Started
 - fork the repo.
 - clone it .
 - run command "npm i'
