@@ -53,27 +53,8 @@ app.get('/getRate', (req, res) => {
 //---------------- define and use our static directores in the app--------------//
 //------------------------------------------------------------------------------//
 app.use(express.static(path.join(__dirname, 'public')));
-// app.use(express.static(path.join(__dirname, 'module-0')));
 app.use(express.static(path.join(__dirname, 'node_nmodules')));
 
-app.get('/', (req, res) => {
-  // db.save({ description: "wyruu", updateDate: Date.now() });
-});
-// app.set('view engine', 'jsx')
-
-// app.get('/mod1', function(req, res){
-//   request('http://127.0.0.1:3001/main.js', function (error, response, body) {
-//     if (!error && response.statusCode === 200) {
-//       console.log(body);
-//       res.send(body);
-//     }
-//    });
-// });
+app.get('/', (req, res) => {});
 
 app.listen(port, () => console.log(`Listening on ${port}`));
-
-// express()
-//   .use(express.static(path.join(__dirname, 'public')))
-//   .get('/', (req, res) => res.render('public/index'))
-//   .set('view engine', 'jsx')
-//   .listen(port, () => console.log(`Listening on ${ port }`))
