@@ -108,26 +108,35 @@ class RelatedItems extends React.Component {
         windowurl.length
       );
     }
+
+    //-----------------------------------------------------------------------------------------------------------------//
+    //-------- define all variables need to the next step wich is getting information formbasic information API -------//
+    //-----------------------------------------------------------------------------------------------------------------//
+    var allRats = [];
+    var that = this;
+    var storage = [];
+
     //------------------------------------------------------------------------//
     //-------- ajax request to get information from the basic info API -------//
     //------------------------------------------------------------------------//
-    var allRats = [];
-
-    var that = this;
-    var storage = [];
     $.ajax({
       url: 'https://basic-info-proxy.herokuapp.com/products',
       type: 'GET',
       datatype: 'apllication/json',
       success: function(response) {
+        //------------------------------------------------------------------------------------------------------------------//
+        //-------- If the ajax request successed the i will pop-up the needed information for each item in the list  -------//
+        //------------------------------------------------------------------------------------------------------------------//
         var n = 3;
         var rand = 0;
         var randStorge = [];
-        console.log(rand);
 
         storage = response.slice(1, 5);
         for (var i = 0; i < storage.length; i++) {
           var innerTht = that;
+          //--------------------------------------------------------------------------------------------------------------//
+          //-------- retriving all rates of each item in the list to view it using the rate component form rate API-------//
+          //--------------------------------------------------------------------------------------------------------------//
           $.ajax({
             url:
               'https://protected-plains-93575.herokuapp.com/reviewsApi/getRate/' +
@@ -140,23 +149,29 @@ class RelatedItems extends React.Component {
             }
           }).then(data => {
             allRats.push(data.rate);
+            //------------------------------------------------------------------------------------------------------------------------------//
+            //-------- After getting the Rats we update the status of Rates Array to get the real iformation to each item in the list-------//
+            //------------------------------------------------------------------------------------------------------------------------------//
             innerTht.setState({
               rating: allRats
             });
           });
         }
       },
-      error: function(error) {
-        // alert(error);
-      }
+      error: function(error) {}
     }).then(() => {
+      //------------------------------------------------------------------------------------------------------------//
+      //-------- After getting all information we should store it in a variable to use it in our component ---------//
+      //------------------------------------------------------------------------------------------------------------//
       that.setState({
         storage: storage
       });
     });
   }
   render() {
-    // console.log(">>>", this.state.storage);
+    //---------------------------------------------------//
+    //-------- start rendering all of it together---------//
+    //----------------------------------------------------//
     var that = this;
     var d = this.state.rating;
     return (
@@ -168,7 +183,6 @@ class RelatedItems extends React.Component {
           </div>
         ) : (
           that.state.storage.map((item, index) => {
-            // console.log(index, this.state.rating);
             return (
               <BorderBox
                 style={{ backgroundColor: '#ffffff' }}
@@ -176,7 +190,6 @@ class RelatedItems extends React.Component {
                 mt={3}
                 key={index + 'a'}
               >
-                {/* {console.log(d)} */}
                 <Flex key={index + 'b'}>
                   <Box key={index + 'c'}>
                     <div key={index + 'f'}>
@@ -195,7 +208,6 @@ class RelatedItems extends React.Component {
                       <StarRatings
                         rating={this.state.rating[index] || 0}
                         starRatedColor="orange"
-                        // changeRating={this.changeRating}
                         numberOfStars={5}
                         name="rating"
                         starDimension="10px"
@@ -207,7 +219,6 @@ class RelatedItems extends React.Component {
                     <A
                       id={item.id}
                       target={'_top'}
-                      // onClick={this.handelClick.bind(this)}
                       key={index + 'y'}
                       href={`https://google-play-replica.herokuapp.com/?itemid=${item.id}`}
                     >
