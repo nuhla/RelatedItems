@@ -32,5 +32,6 @@ How to creat a component to view all the needed information of other items relat
 - fork the repo.
 - clone it .
 - run command "npm i'
-- run command "npm run start"
+- run command "npm run start".
+- Open http://localhost:3005/ on a web page
 
