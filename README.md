@@ -1,4 +1,4 @@
-# RelatedItems a googlePlayProductReplica Componetnt 
+# RelatedItems a googlePlayProductReplica Component 
 https://google-play-replica.herokuapp.com/?itemid=4
 
 # Introduction
